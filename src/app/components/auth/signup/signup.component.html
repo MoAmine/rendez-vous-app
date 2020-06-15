@@ -1,0 +1,57 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('https://www.gazoleen.com/wp-content/uploads/2018/12/picto-simplifiez-vous-prise-rdv.svg');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h2 class="title">Créer votre compte</h2>
+        
+                          <form class="register-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                              <label>Email</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+
+                                  <input 
+                                  type="text" 
+                                  class="form-control" 
+                                  id="email" 
+                                  formControlName="email" 
+                                  placeholder="Email" 
+                                  (focus)="focus=true" 
+                                  (blur)="focus=false" >
+                              </div>
+
+                              <label>Password</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                  <input 
+                                  type="password" 
+                                  id="password" 
+                                  formControlName="password"
+                                  class="form-control" 
+                                  placeholder="Password" 
+                                  (focus)="focus1=true" 
+                                  (blur)="focus1=false" >
+                              </div>
+                              <button 
+                              class="btn btn-danger btn-block btn-round"
+                              type="submit"
+                              >Créer mon compte</button>
+                          </form>
+                          
+                          <p>{{ errorMessage }}</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

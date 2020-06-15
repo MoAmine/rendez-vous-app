@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" routerLink="/home" *ngIf="!isAuth" >Rendez-vous app</a>
+            <a class="navbar-brand" routerLink="/rendez-vous" *ngIf="isAuth">Calendrier</a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">    
+                <li class="nav-item" *ngIf="!isAuth" routerLinkActive="active">
+                    <a class="nav-link" rel="tooltip" routerLink="/signin">Se connecter</a>
+                </li>
+                
+                <li class="nav-item" *ngIf="isAuth" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/demandes">Demandes</a>
+                </li>
+                <li class="nav-item" *ngIf="isAuth" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/add-rendez-vous" >Ajouter un rendez-vous</a>
+                </li>
+                <li class="nav-item" *ngIf="isAuth" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/rendez-vous-list">Supprimer un rendez-vous</a>
+                </li>
+                <li class="nav-item" *ngIf="isAuth" routerLinkActive="active">
+                    <a class="nav-link" 
+                    style="cursor:pointer" 
+                    (click)="onSignOut()" >Deconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

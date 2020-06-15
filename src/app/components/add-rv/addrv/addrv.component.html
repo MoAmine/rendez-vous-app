@@ -1,0 +1,57 @@
+
+<div class="page-header" data-parallax="true" style="color:black; background-image: url('https://imagekit.io/static/img/newPages/homepage-wave-bg.svg');" >
+    <div class="container" >
+        <br><br><br><br><br><br><br>
+
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                <h2 align="center">Ajouter un rendez-vous</h2><br><br>
+                <form [formGroup]="rendezVousForm" (ngSubmit)="onSaveRendezVous()" align="center">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom"
+                            class="form-control" formControlName="nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prenom</label>
+                        <input type="text" id="prenom"
+                            class="form-control" formControlName="prenom">
+                    </div>
+                    <div class="form-group">
+                    <label for="title">Objet</label>
+                    <input type="text" id="title"
+                            class="form-control" formControlName="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email"
+                            class="form-control" formControlName="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Tel</label>
+                        <input type="text" id="tel"
+                            class="form-control" formControlName="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="text" id="date"  placeholder="yyyy-mm-dd, Exemple: 2018-12-30"
+                            class="form-control" formControlName="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Heure</label>
+                        <input type="text" id="heure" placeholder="hh:mm:ss, Exemple: 15:00:00"
+                            class="form-control" formControlName="heure">
+                    </div>
+                    
+                    <button class="btn btn-success" [disabled]="rendezVousForm.invalid"
+                            type="submit">Enregistrer
+                    </button>
+            
+                </form>
+                </div>
+            </div>
+            
+</div>
+
+
+
